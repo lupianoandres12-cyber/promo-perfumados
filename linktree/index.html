@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promo Perfumados</title>
+<link rel="stylesheet" href="../site/style.css">
+<link rel="stylesheet" href="linktree.css">
+
+<!-- config.js precisa vir ANTES do pixel, porque o pixel lê o Pixel ID dali -->
+<script src="../site/config.js"></script>
+
+<!-- ==================== META PIXEL ==================== -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', SITE_CONFIG.metaPixelId);
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1"/>
+</noscript>
+<!-- ==================== FIM META PIXEL ==================== -->
+</head>
+<body class="linktree-page">
+
+<div class="linktree-container">
+  <header>
+    <div class="header-brand">
+      <h1 id="site-name">Promo Perfumados</h1>
+    </div>
+    <p id="site-tagline">Escolha por onde quer entrar</p>
+  </header>
+
+  <div class="link-list">
+    <a id="link-site" class="link-card" href="#" target="_blank" rel="noopener">
+      <span class="link-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 6 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-6-3.8-9s1.3-6.3 3.8-9z"/></svg>
+      </span>
+      <span class="link-card-text">
+        <span class="link-card-title">Ver o site</span>
+        <span class="link-card-subtitle">Todos os perfumes com preço atualizado</span>
+      </span>
+    </a>
+
+    <a id="link-whatsapp" class="link-card primary" href="#">
+      <span class="link-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 14.5c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.4C9.4 9.2 9 8 8.8 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2z"/></svg>
+      </span>
+      <span class="link-card-text">
+        <span class="link-card-title">Entrar no grupo do WhatsApp</span>
+        <span class="link-card-subtitle">Promoções em primeira mão, todos os dias</span>
+      </span>
+    </a>
+  </div>
+
+  <div class="legal-note" id="legal-note"></div>
+</div>
+
+<script src="linktree.js"></script>
+</body>
+</html>

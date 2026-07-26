@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfume — Página Ponte</title>
+
+<!-- ==================== META PIXEL ==================== -->
+<!-- Substitua SEU_PIXEL_ID_AQUI pelo ID do seu Pixel (Meta Events Manager > Fontes de dados > Pixel) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'SEU_PIXEL_ID_AQUI');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1"/>
+</noscript>
+<!-- ==================== FIM META PIXEL ==================== -->
+
+<style>
+  body { font-family: Arial, sans-serif; background:#111; color:#fff; text-align:center; padding:60px 20px; }
+  h1 { font-size: 22px; margin-bottom: 12px; }
+  p { color:#ccc; margin-bottom: 32px; }
+  button {
+    background:#25D366; color:#fff; border:none; padding:16px 32px;
+    font-size:16px; border-radius:8px; cursor:pointer;
+  }
+  button:active { opacity:0.8; }
+  #debug { margin-top: 40px; font-size: 12px; color:#666; text-align:left; max-width:400px; margin-left:auto; margin-right:auto; }
+</style>
+</head>
+<body>
+
+<h1>Perfumes com desconto — entre no grupo</h1>
+<p>Clique abaixo para entrar e receber as ofertas.</p>
+<button onclick="irParaWhatsapp()">Entrar agora</button>
+
+<div id="debug"></div>
+
+<script>
+  // ------------------------------------------------------------------
+  // CONFIGURAÇÃO — trocar antes de publicar
+  // ------------------------------------------------------------------
+  // URL gerada ao implantar landing-page/tracker/Codigo.gs como Web App
+  const TRACKER_URL = "https://script.google.com/macros/s/AKfycbzkKT_hZZEN6S5FrQlPDiwYesRiy2IjllA7qn82Wg09hh3xtySV0CIVJbZN1koi4VQe/exec";
+
+  // ------------------------------------------------------------------
+  // Captura de origem — permite ver na planilha e no Meta qual
+  // anúncio/criativo gerou o clique. Na URL do anúncio, usar algo como:
+  // https://seusite.com/landing-page/?origem=video1
+  // ------------------------------------------------------------------
+  function getParam(nome) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(nome) || 'direto';
+  }
+  function getCookie(nome) {
+    const match = document.cookie.match('(^|;)\\s*' + nome + '\\s*=\\s*([^;]+)');
+    return match ? match.pop() : '';
+  }
+  const origem = getParam('origem');
+  const eventId = 'ev_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+
+  function irParaWhatsapp() {
+    // Dispara o pixel do navegador também (redundância/dedup com o event_id)
+    fbq('track', 'Lead', { content_category: origem }, { eventID: eventId });
+
+    const params = new URLSearchParams({
+      origem: origem,
+      fbp: getCookie('_fbp'),
+      fbc: getCookie('_fbc'),
+      ua: navigator.userAgent,
+      url: window.location.href,
+      eid: eventId
+    });
+
+    document.getElementById('debug').innerText =
+      'Registrando clique (origem: ' + origem + ') e redirecionando...';
+
+    // pequeno atraso para garantir que o pixel do navegador envie antes de sair da página
+    setTimeout(function () {
+      window.location.href = TRACKER_URL + '?' + params.toString();
+    }, 250);
+  }
+</script>
+
+</body>
+</html>
