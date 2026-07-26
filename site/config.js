@@ -16,7 +16,7 @@ const SITE_CONFIG = {
 
   // URL pública do site (essa vitrine), depois de publicada em algum hosting
   // (Netlify, GitHub Pages etc). Usada pelo linktree (landing-page/linktree/).
-  siteUrl: "https://SEU-SITE-PUBLICADO-AQUI",
+  siteUrl: "https://promo-perfumados.vercel.app",
 
   // URL do Apps Script (landing-page/tracker/Codigo.gs) implantado como Web App.
   // Mesma URL usada em pixel-preview.html.
