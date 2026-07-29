@@ -40,7 +40,7 @@ const PRODUCTS = [
     preco: 100.05,
     precoOriginal: 199,
     imagem: "https://http2.mlstatic.com/D_NQ_NP_938312-MLA91937050310_092025-O.webp",
-    categoria: "Feminino",
+    categoria: "Masculino",
     link: "https://meli.la/2TiohcV"
   },
   {
@@ -49,7 +49,7 @@ const PRODUCTS = [
     preco: 298,
     precoOriginal: 399,
     imagem: "https://http2.mlstatic.com/D_NQ_NP_730977-MLA114768510823_072026-O.webp",
-    categoria: "Unissex",
+    categoria: "Masculino",
     link: "https://meli.la/1ErqNJe"
   },
   {
@@ -78,13 +78,5 @@ const PRODUCTS = [
     imagem: "https://http2.mlstatic.com/D_NQ_NP_863228-MLB90084898734_082025-O-perfume-masculino-arabe-salvo-eua-de-parfum-alhmabra-100ml-original-c-nf.webp",
     categoria: "Masculino",
     link: "https://meli.la/1NsUsMR"
-  },
-  {
-    nome: "Kit Perfume + Desodorante Antitranspirante",
-    marca: "Genérico",
-    preco: 89.90,
-    imagem: "https://placehold.co/300x300/f5efe8/b8895f?text=Kit+2",
-    categoria: "Kits",
-    link: "https://www.mercadolivre.com.br/SEU_LINK_AFILIADO_9"
   }
 ];
