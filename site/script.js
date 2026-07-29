@@ -6,6 +6,7 @@
 document.getElementById("site-name").textContent = SITE_CONFIG.nome;
 document.getElementById("site-tagline").textContent = SITE_CONFIG.tagline;
 document.getElementById("disclaimer").textContent = SITE_CONFIG.disclaimer;
+document.getElementById("price-note").textContent = SITE_CONFIG.precoInfo;
 document.getElementById("legal-note").textContent = SITE_CONFIG.avisoLegal;
 
 // --- Captura de origem (qual anúncio/criativo trouxe a pessoa) ---
