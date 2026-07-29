@@ -12,7 +12,7 @@ const SITE_CONFIG = {
   // então NÃO precisa ser o link direto — o rastreador já redireciona.
   whatsappLink: "https://chat.whatsapp.com/KZUyB03TTF44nLjjhMi6CF",
 
-  instagramLink: "https://instagram.com/SEU_PERFIL_AQUI",
+  instagramLink: "https://www.instagram.com/promosperfumados/",
 
   // URL pública do site (essa vitrine), depois de publicada em algum hosting
   // (Netlify, GitHub Pages etc). Usada pelo linktree (landing-page/linktree/).
