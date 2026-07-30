@@ -78,5 +78,41 @@ const PRODUCTS = [
     imagem: "https://http2.mlstatic.com/D_NQ_NP_863228-MLB90084898734_082025-O-perfume-masculino-arabe-salvo-eua-de-parfum-alhmabra-100ml-original-c-nf.webp",
     categoria: "Masculino",
     link: "https://meli.la/1NsUsMR"
+  },
+  {
+    nome: "Perfume Rabanne Phantom Eau de Toilette 100ml Masculino",
+    marca: "Rabanne",
+    preco: 572.14,
+    precoOriginal: 769,
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_723681-MLA72822029202_112023-O.webp",
+    categoria: "Masculino",
+    link: "https://meli.la/2PibxcH"
+  },
+  {
+    nome: "Perfume Árabe Lattafa Fakhar Gold Extrait Eau de Parfum 100ml",
+    marca: "Lattafa",
+    preco: 150.82,
+    precoOriginal: 229.90,
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_733502-MLA109315971804_042026-O.webp",
+    categoria: "Masculino",
+    link: "https://meli.la/2XKxiJw"
+  },
+  {
+    nome: "Perfume Calvin Klein CK One 200ml",
+    marca: "Calvin Klein",
+    preco: 258.19,
+    precoOriginal: 699,
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_664018-MLA84852950065_052025-O.webp",
+    categoria: "Masculino",
+    link: "https://meli.la/1pdRVAi"
+  },
+  {
+    nome: "Perfume Árabe Musamam White Intense Eau de Parfum 100ml Original Lipx",
+    marca: "Lattafa",
+    preco: 277.73,
+    precoOriginal: 397.90,
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_973277-MLA108710760415_032026-O.webp",
+    categoria: "Masculino",
+    link: "https://meli.la/2WwC7Fe"
   }
 ];
