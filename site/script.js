@@ -13,6 +13,7 @@ document.getElementById("section-title").textContent = SITE_CONFIG.tituloSecao;
 document.getElementById("hero-title").textContent = SITE_CONFIG.heroTitulo;
 document.getElementById("hero-subtitle").textContent = SITE_CONFIG.heroSubtitulo;
 document.getElementById("hero-btn").textContent = SITE_CONFIG.heroBotao;
+document.getElementById("hero-stat").textContent = "✨ " + PRODUCTS.length + " perfumes com desconto agora";
 
 // --- Hero: carrossel de fotos com crossfade (nossos próprios produtos,
 // já que não temos vídeo próprio — dá o efeito de "algo passando" sem

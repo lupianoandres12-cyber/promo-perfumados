@@ -110,6 +110,12 @@ header {
   opacity: 0;
   filter: brightness(0.45) saturate(1.05);
   transition: opacity 1.8s ease;
+  animation: heroKenBurns 10s ease-in-out infinite alternate;
+}
+
+@keyframes heroKenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.12); }
 }
 
 .hero-slide.active { opacity: 1; }
@@ -188,6 +194,13 @@ header {
 }
 
 .hero-banner-btn:hover { background: var(--color-accent-hover); }
+
+.hero-stat {
+  margin-top: var(--space-4);
+  font-size: 11.5px;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.65);
+}
 
 .shop-band {
   background: var(--color-accent-tint);
@@ -431,6 +444,30 @@ header {
   padding: var(--space-7) var(--space-4);
   color: var(--color-text-muted);
   font-size: var(--text-sm);
+}
+
+.video-showcase {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface);
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+}
+
+.video-frame {
+  max-width: 720px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: #000;
+}
+
+.video-frame video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
 }
 
 .cta-section {
