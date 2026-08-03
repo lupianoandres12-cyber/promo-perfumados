@@ -64,6 +64,7 @@ const whatsappCta = document.getElementById("whatsapp-cta");
 const instagramCta = document.getElementById("instagram-cta");
 instagramFab.href = SITE_CONFIG.instagramLink;
 instagramCta.href = SITE_CONFIG.instagramLink;
+document.getElementById("video-instagram-link").href = SITE_CONFIG.instagramLink;
 
 whatsappFab.addEventListener("click", function (e) {
   e.preventDefault();
