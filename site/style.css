@@ -143,6 +143,22 @@ header {
 .hero-wave-bottom { bottom: -1px; }
 .hero-wave-bottom path { fill: var(--color-accent-tint); }
 
+/* Onda genérica reutilizável, usada em outras junções de seção (ex: faixa do Instagram) */
+.section-wave {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.section-wave svg { width: 100%; height: 40px; display: block; }
+.section-wave.top { top: -1px; transform: rotate(180deg); }
+.section-wave.bottom { bottom: -1px; }
+.section-wave.fill-bg path { fill: var(--color-bg); }
+.section-wave.fill-tint path { fill: var(--color-accent-tint); }
+
 .hero-banner-title {
   font-size: clamp(24px, 4vw, 34px);
   font-weight: 700;
@@ -487,10 +503,12 @@ header {
 .cta-btn.secondary:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
 .instagram-band {
+  position: relative;
+  overflow: hidden;
   background: #1a1a1a;
   color: #fff;
   text-align: center;
-  padding: var(--space-7) var(--space-4);
+  padding: var(--space-8) var(--space-4);
   margin-top: var(--space-6);
 }
 
