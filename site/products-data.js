@@ -114,5 +114,68 @@ const PRODUCTS = [
     imagem: "https://http2.mlstatic.com/D_NQ_NP_973277-MLA108710760415_032026-O.webp",
     categoria: "Masculino",
     link: "https://meli.la/2WwC7Fe"
+  },
+  {
+    nome: "Essencial Atrai Deo Parfum Masculino 100ml",
+    marca: "Natura",
+    preco: 135,
+    precoOriginal: 157.90,
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_631357-MLA87101490476_072025-O.webp",
+    categoria: "Masculino",
+    link: "https://meli.la/1mwLN8L"
+  },
+  {
+    nome: "Perfume Armaf Club De Nuit Intense 105ml EDT",
+    marca: "Armaf",
+    preco: 222.69,
+    precoOriginal: 399.90,
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_701465-MLA109483577626_042026-O.webp",
+    categoria: "Masculino",
+    link: "https://meli.la/1LKZRFg"
+  },
+  {
+    nome: "Perfume Árabe Maktub La Vie Bidaya Eau de Parfum 100ml",
+    marca: "Bidaya",
+    preco: 199.20,
+    precoOriginal: 349.90,
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_743031-MLA96399378979_102025-O.webp",
+    categoria: "Masculino",
+    link: "https://meli.la/2AtHGxm"
+  },
+  {
+    nome: "Effervescent Perfume Lab 8 Niche 100ml",
+    marca: "Lab 8",
+    preco: 179.42,
+    precoOriginal: 218.80,
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_606063-MLA106576635141_022026-O.webp",
+    categoria: "Masculino",
+    link: "https://meli.la/1aC8zTy"
+  },
+  {
+    nome: "Perfume Árabe Attar Al Wesal Gold EDP Masculino 100ml Com NF",
+    marca: "Al Wataniah",
+    preco: 223.24,
+    precoOriginal: 234.99,
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_843463-MLA111347632558_052026-O-perfume-arabe-attar-al-wesal-gold-edp-masculino-100ml-com-nf.webp",
+    categoria: "Masculino",
+    link: "https://meli.la/2T3HsEa"
+  },
+  {
+    nome: "Perfume Khadlaj Shiyaaka Shadow Eau de Parfum 100ml",
+    marca: "Khadlaj",
+    preco: 255,
+    precoOriginal: 399.90,
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_987260-MLA91289573871_082025-O.webp",
+    categoria: "Masculino",
+    link: "https://meli.la/1izXviv"
+  },
+  {
+    nome: "Perfume Maison Alhambra Sceptre Bronzite EDP 100ml",
+    marca: "Maison Alhambra",
+    preco: 168.90,
+    precoOriginal: 290.73,
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_958094-MLA86753698300_072025-O.webp",
+    categoria: "Masculino",
+    link: "https://meli.la/2askJSg"
   }
 ];

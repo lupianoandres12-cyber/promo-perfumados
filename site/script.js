@@ -8,6 +8,13 @@ document.getElementById("site-tagline").textContent = SITE_CONFIG.tagline;
 document.getElementById("disclaimer").textContent = SITE_CONFIG.disclaimer;
 document.getElementById("price-note").textContent = SITE_CONFIG.precoInfo;
 document.getElementById("legal-note").textContent = SITE_CONFIG.avisoLegal;
+document.getElementById("announcement-bar").textContent = SITE_CONFIG.avisoTopo;
+document.getElementById("section-title").textContent = SITE_CONFIG.tituloSecao;
+
+// --- Faixa "Siga no Instagram" ---
+const instagramHandle = "@" + SITE_CONFIG.instagramLink.replace(/\/$/, "").split("/").pop();
+document.getElementById("instagram-handle").textContent = instagramHandle;
+document.getElementById("instagram-band-btn").href = SITE_CONFIG.instagramLink;
 
 // --- Captura de origem (qual anúncio/criativo trouxe a pessoa) ---
 function getParam(nome) {

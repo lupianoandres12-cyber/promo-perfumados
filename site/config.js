@@ -14,6 +14,12 @@ const SITE_CONFIG = {
 
   instagramLink: "https://www.instagram.com/promosperfumados/",
 
+  // Faixa fina no topo do site, tipo aviso/promo (inspirado em lojas de e-commerce).
+  avisoTopo: "🔥 Promoções novas toda semana — direto do Mercado Livre",
+
+  // Título centralizado que aparece acima da grade de produtos.
+  tituloSecao: "Nossos Perfumes",
+
   // URL pública do site (essa vitrine), depois de publicada em algum hosting
   // (Netlify, GitHub Pages etc). Usada pelo linktree (landing-page/linktree/).
   siteUrl: "/site/",
