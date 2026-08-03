@@ -10,6 +10,9 @@ document.getElementById("price-note").textContent = SITE_CONFIG.precoInfo;
 document.getElementById("legal-note").textContent = SITE_CONFIG.avisoLegal;
 document.getElementById("announcement-bar").textContent = SITE_CONFIG.avisoTopo;
 document.getElementById("section-title").textContent = SITE_CONFIG.tituloSecao;
+document.getElementById("hero-title").textContent = SITE_CONFIG.heroTitulo;
+document.getElementById("hero-subtitle").textContent = SITE_CONFIG.heroSubtitulo;
+document.getElementById("hero-btn").textContent = SITE_CONFIG.heroBotao;
 
 // --- Faixa "Siga no Instagram" ---
 const instagramHandle = "@" + SITE_CONFIG.instagramLink.replace(/\/$/, "").split("/").pop();
@@ -86,13 +89,29 @@ let termoBusca = "";
 categorias.forEach(cat => {
   const btn = document.createElement("button");
   btn.className = "category-btn" + (cat === categoriaAtiva ? " active" : "");
-  btn.textContent = cat;
   btn.addEventListener("click", () => {
     categoriaAtiva = cat;
     document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
     renderizar();
   });
+
+  const circle = document.createElement("span");
+  circle.className = "category-circle";
+  if (cat === "Todos") {
+    circle.classList.add("category-circle-all");
+    circle.textContent = "✨";
+  } else {
+    const amostra = PRODUCTS.find(p => p.categoria === cat);
+    if (amostra) circle.style.backgroundImage = "url('" + amostra.imagem + "')";
+  }
+
+  const label = document.createElement("span");
+  label.className = "category-label";
+  label.textContent = cat;
+
+  btn.appendChild(circle);
+  btn.appendChild(label);
   categoriesEl.appendChild(btn);
 });
 

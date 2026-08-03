@@ -20,6 +20,11 @@ const SITE_CONFIG = {
   // Título centralizado que aparece acima da grade de produtos.
   tituloSecao: "Nossos Perfumes",
 
+  // Banner grande logo abaixo do cabeçalho (título, subtítulo e botão).
+  heroTitulo: "As melhores promoções de perfume, todo dia",
+  heroSubtitulo: "Direto do Mercado Livre — preços conferidos com carinho antes de entrar no site.",
+  heroBotao: "Ver promoções",
+
   // URL pública do site (essa vitrine), depois de publicada em algum hosting
   // (Netlify, GitHub Pages etc). Usada pelo linktree (landing-page/linktree/).
   siteUrl: "/site/",
