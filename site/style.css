@@ -37,6 +37,8 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+html { scroll-behavior: smooth; }
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   background: var(--color-bg);
@@ -86,11 +88,60 @@ header {
 }
 
 .hero-banner {
-  background: linear-gradient(135deg, #2a1d14 0%, #4a3221 55%, #6b4a2f 100%);
+  position: relative;
+  overflow: hidden;
+  background: #2a1d14;
   color: #fff;
   text-align: center;
   padding: var(--space-8) var(--space-4);
 }
+
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  filter: brightness(0.45) saturate(1.05);
+  transition: opacity 1.8s ease;
+}
+
+.hero-slide.active { opacity: 1; }
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(35, 24, 16, 0.82), rgba(74, 50, 33, 0.6) 55%, rgba(107, 74, 47, 0.7));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-wave {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-wave svg { width: 100%; height: 48px; display: block; }
+
+.hero-wave-top { top: 0; transform: rotate(180deg); }
+.hero-wave-top path { fill: var(--color-bg); }
+
+.hero-wave-bottom { bottom: -1px; }
+.hero-wave-bottom path { fill: var(--color-accent-tint); }
 
 .hero-banner-title {
   font-size: clamp(24px, 4vw, 34px);
@@ -261,7 +312,13 @@ header {
   text-decoration: none;
   color: inherit;
   box-shadow: none;
-  transition: transform 0.2s ease;
+  opacity: 0;
+  transform: translateY(0);
+  transition: transform 0.2s ease, opacity 0.6s ease;
+}
+
+.card.in-view {
+  opacity: 1;
 }
 
 .card:hover {

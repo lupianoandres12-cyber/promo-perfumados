@@ -14,6 +14,32 @@ document.getElementById("hero-title").textContent = SITE_CONFIG.heroTitulo;
 document.getElementById("hero-subtitle").textContent = SITE_CONFIG.heroSubtitulo;
 document.getElementById("hero-btn").textContent = SITE_CONFIG.heroBotao;
 
+// --- Hero: carrossel de fotos com crossfade (nossos próprios produtos,
+// já que não temos vídeo próprio — dá o efeito de "algo passando" sem
+// depender de material de terceiros) ---
+(function montarHeroSlides() {
+  const heroSlidesEl = document.getElementById("hero-slides");
+  const imagens = PRODUCTS.filter((_, i) => i % 3 === 0).slice(0, 6).map(p => p.imagem);
+  if (imagens.length === 0) return;
+
+  imagens.forEach((src, i) => {
+    const slide = document.createElement("div");
+    slide.className = "hero-slide" + (i === 0 ? " active" : "");
+    slide.style.backgroundImage = "url('" + src + "')";
+    heroSlidesEl.appendChild(slide);
+  });
+
+  if (imagens.length > 1) {
+    let indiceAtual = 0;
+    setInterval(() => {
+      const slides = heroSlidesEl.querySelectorAll(".hero-slide");
+      slides[indiceAtual].classList.remove("active");
+      indiceAtual = (indiceAtual + 1) % slides.length;
+      slides[indiceAtual].classList.add("active");
+    }, 4000);
+  }
+})();
+
 // --- Faixa "Siga no Instagram" ---
 const instagramHandle = "@" + SITE_CONFIG.instagramLink.replace(/\/$/, "").split("/").pop();
 document.getElementById("instagram-handle").textContent = instagramHandle;
@@ -176,6 +202,29 @@ function renderizar() {
       '</div>';
     gridEl.appendChild(card);
   });
+
+  observarCards();
+}
+
+// --- Cards aparecem com fade suave conforme entram na tela ---
+const cardObserver = "IntersectionObserver" in window
+  ? new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 })
+  : null;
+
+function observarCards() {
+  if (!cardObserver) {
+    // navegador sem suporte a IntersectionObserver: mostra tudo direto
+    document.querySelectorAll(".card").forEach(card => card.classList.add("in-view"));
+    return;
+  }
+  document.querySelectorAll(".card:not(.in-view)").forEach(card => cardObserver.observe(card));
 }
 
 renderizar();
