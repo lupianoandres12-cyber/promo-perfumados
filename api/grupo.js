@@ -8,9 +8,6 @@ module.exports = async (req, res) => {
   const kvUrl = process.env.KV_REST_API_URL;
   const kvToken = process.env.KV_REST_API_TOKEN;
 
-  const pixelId = process.env.META_PIXEL_ID;
-  const capiToken = process.env.META_CAPI_TOKEN;
-
   async function kvGetClicks(index) {
     try {
       const r = await fetch(kvUrl + '/get/grupo_' + index + '_clicks', {
@@ -31,40 +28,6 @@ module.exports = async (req, res) => {
     } catch (e) {}
   }
 
-  async function sendMetaClickEvent(req) {
-    if (!pixelId || !capiToken) return;
-    try {
-      const eventTime = Math.floor(Date.now() / 1000);
-      const forwardedFor = req.headers['x-forwarded-for'];
-      const clientIp = forwardedFor ? forwardedFor.split(',')[0].trim() : (req.socket && req.socket.remoteAddress);
-      const userAgent = req.headers['user-agent'];
-      const url = 'https://graph.facebook.com/v19.0/' + pixelId + '/events?access_token=' + capiToken;
-      const body = {
-        data: [
-          {
-            event_name: 'ClickGrupoWhatsApp',
-            event_time: eventTime,
-            action_source: 'website',
-            event_source_url: 'https://promo-perfumados.vercel.app/api/grupo',
-            user_data: {
-              client_ip_address: clientIp,
-              client_user_agent: userAgent,
-            },
-          },
-        ],
-      };
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 1500);
-      await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-        signal: controller.signal,
-      });
-      clearTimeout(timeout);
-    } catch (e) {}
-  }
-
   let targetIndex = groups.length - 1;
   let target = groups[targetIndex];
 
@@ -79,7 +42,6 @@ module.exports = async (req, res) => {
   }
 
   await kvIncrClicks(targetIndex);
-  await sendMetaClickEvent(req);
 
   res.writeHead(302, { Location: target.link });
   res.end();
